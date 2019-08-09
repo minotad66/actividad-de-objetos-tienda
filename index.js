@@ -100,21 +100,6 @@ const productsList = [{
     quantity: 3
 },]
 
-//products.forEach(item => console.log('products: ',item))
-//list.forEach(item => console.log('list',item))
-
-
-/** 
- * Requerimientos:
- * 1: Dentro de la función principal deberás imprimir la lista de productos con la cantidad restante después de la compra.
- * 2: Imprimir el valor total sin aplicar el descuento. El número debe tener dos decimales.
- * 3: Imprimir el total del descuento aplicado.
- * 4: Si no hay suficientes productos se debe agregar a la lista de compra solo los que alcancen.
- **/
-
-// TODO: Si crees que es necesesario incluye más funciones para las pequeñas tareas
-
-// Funciones adicionales aquí...productsIds
 
 function cliente(name, num){
   let res;
@@ -136,8 +121,8 @@ function cliente(name, num){
 }
 
 function getCostList(client, productsList) {
-    console.log('Lista de compras');
-    console.log(client);
+    console.log('LISTA DE COMPRAS');
+    console.log('Nombre del cliente: ',client);
     var total = 0;
     productsList.forEach((item)=>{
       var subtotal;
@@ -152,11 +137,11 @@ function getCostList(client, productsList) {
           inventario.quantity -= inventario.quantity;
       }
       total = subtotal + total;
-      console.log('producto: ',inventario.name);
-      console.log('precio: ',inventario.price);
-      console.log('cantidad a comprar: ',item.quantity);
-      console.log('cantidad restante: ',inventario.quantity);
-      console.log('sub total: ', subtotal);
+      console.log('Producto: ',inventario.name);
+      console.log('Precio: ',inventario.price);
+      console.log('Cantidad a comprar: ',item.quantity);
+      console.log('Cantidad restante: ',inventario.quantity);
+      console.log('Sub-total: ', subtotal);
       console.log('');
   });
   
@@ -164,7 +149,7 @@ function getCostList(client, productsList) {
   return cliente(client, total);
 }
 
-const result = getCostList(clients[1], productsList);
+const result = getCostList(clients[0], productsList);
 
 // Imprime el total de la compra
 console.log('El total de la compra es: ' + result.toFixed(2))
