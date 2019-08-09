@@ -45,7 +45,7 @@ const products = [{
 {
     id: 8,
     name: "Cilantro",
-    quantity: 3,
+    quantity: 9,
     price: 545
 },
 {
@@ -136,6 +136,7 @@ function cliente(name, num){
 }
 
 function getCostList(client, productsList) {
+    console.log('Lista de compras');
     console.log(client);
     var total = 0;
     productsList.forEach((item)=>{
@@ -145,10 +146,18 @@ function getCostList(client, productsList) {
       var inventario = products.find(productItem => productItem.id === productoAComprar);
       if(inventario.quantity >= cantidadAComprar){
           subtotal = cantidadAComprar * inventario.price;
+          inventario.quantity -= cantidadAComprar;
       }else{
           subtotal = inventario.quantity * inventario.price;
+          inventario.quantity -= inventario.quantity;
       }
       total = subtotal + total;
+      console.log('producto: ',inventario.name);
+      console.log('precio: ',inventario.price);
+      console.log('cantidad a comprar: ',item.quantity);
+      console.log('cantidad restante: ',inventario.quantity);
+      console.log('sub total: ', subtotal);
+      console.log('');
   });
   
   console.log('total de la compra sin descuento: ',total);
