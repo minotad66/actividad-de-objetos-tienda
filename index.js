@@ -1,6 +1,6 @@
 var client = ['Cristian Vega','León Ceballos','Jesse Cogollo']
 
-var productStock = [{
+var products = [{
     id: 1,
     name: "Jugos procesados",
     stock: 7,
@@ -67,7 +67,7 @@ var productStock = [{
     price: 5432.443
 }]
 
-var productsPurchased = [{
+var list = [{
     id: 1,
     quantity: 7,
 },
@@ -100,31 +100,4 @@ var productsPurchased = [{
     quantity: 3
 },]
 
-var total = 0;
-
-function cliente(name, num){
-    let res;
-    if(name === 'Cristian Vega'){
-      res = (num*5)/100;
-      return res = num-res;
-    }
-    else if(name === 'León Ceballos'){
-      res = (num*10)/100;
-      return res = num-res;
-    }
-    else if(name === 'Jesse Cogollo'){
-      res = (num*2)/100;
-      return res = num-res;
-    }
-    else{
-      console.log("el cliente no esta");
-    }
-  }
-  // TODO: Función Principal getCostList
-  function getCostList(client, productsIds) {
-    // Código aquí...
-    let lista = productsIds.indexOf();
-  }
-
-const result = getCostList(client[0], productsPurchased);
-console.log('El total de la compra es: ' + result)
+products.forEach(item => console.log(item.name))
